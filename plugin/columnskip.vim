@@ -1,23 +1,23 @@
 scriptencoding utf-8
 
-" vint: next-line -ProhibitUnusedVariable
-function! s:column_skip(dir) abort
-  let lnum = line('.')
-  let width = col('.') <= 1 ? 0 : strdisplaywidth(matchstr(getline(lnum)[: col('.')-2], '^\s*'))
-  while 1 <= lnum && lnum <= line('$')
-    let lnum += (a:dir ==# 'j' ? 1 : -1)
-    let line = getline(lnum)
-    if width >= strdisplaywidth(matchstr(line, '^\s*')) && line =~# '^\s*\S'
-      break
-    endif
-  endwhile
-  return abs(line('.') - lnum) . a:dir
-endfunction
+nnoremap <expr><silent> <Plug>(columnskip:nonblank:next) columnskip#nonblank('j')
+onoremap <expr><silent> <Plug>(columnskip:nonblank:next) columnskip#nonblank('j')
+xnoremap <expr><silent> <Plug>(columnskip:nonblank:next) columnskip#nonblank('j')
+nnoremap <expr><silent> <Plug>(columnskip:nonblank:prev) columnskip#nonblank('k')
+onoremap <expr><silent> <Plug>(columnskip:nonblank:prev) columnskip#nonblank('k')
+xnoremap <expr><silent> <Plug>(columnskip:nonblank:prev) columnskip#nonblank('k')
 
-nnoremap <expr><silent> <Plug>(columnskip-j) <SID>column_skip('j')
-onoremap <expr><silent> <Plug>(columnskip-j) <SID>column_skip('j')
-xnoremap <expr><silent> <Plug>(columnskip-j) <SID>column_skip('j')
+" for compatibility
+nmap <Plug>(columnskip-j) <Plug>(columnskip:nonblank:next)
+omap <Plug>(columnskip-j) <Plug>(columnskip:nonblank:next)
+xmap <Plug>(columnskip-j) <Plug>(columnskip:nonblank:next)
+nmap <Plug>(columnskip-k) <Plug>(columnskip:nonblank:prev)
+omap <Plug>(columnskip-k) <Plug>(columnskip:nonblank:prev)
+xmap <Plug>(columnskip-k) <Plug>(columnskip:nonblank:prev)
 
-nnoremap <expr><silent> <Plug>(columnskip-k) <SID>column_skip('k')
-onoremap <expr><silent> <Plug>(columnskip-k) <SID>column_skip('k')
-xnoremap <expr><silent> <Plug>(columnskip-k) <SID>column_skip('k')
+nnoremap <expr><silent> <Plug>(columnskip:first-nonblank:next) columnskip#first_nonblank('Wn')
+onoremap <expr><silent> <Plug>(columnskip:first-nonblank:next) columnskip#first_nonblank('Wn')
+xnoremap <expr><silent> <Plug>(columnskip:first-nonblank:next) columnskip#first_nonblank('Wn')
+nnoremap <expr><silent> <Plug>(columnskip:first-nonblank:prev) columnskip#first_nonblank('Wbn')
+onoremap <expr><silent> <Plug>(columnskip:first-nonblank:prev) columnskip#first_nonblank('Wbn')
+xnoremap <expr><silent> <Plug>(columnskip:first-nonblank:prev) columnskip#first_nonblank('Wbn')
