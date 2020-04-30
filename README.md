@@ -26,10 +26,10 @@ Go to the next/previous line whose first character is non-blank.
 
 ```vim
 " Example
-nmap ]k <Plug>(columnskip:first-nonblank:next)
-omap ]k <Plug>(columnskip:first-nonblank:next)
-xmap ]k <Plug>(columnskip:first-nonblank:next)
-nmap [k <Plug>(columnskip:first-nonblank:prev)
-omap [k <Plug>(columnskip:first-nonblank:prev)
-xmap [k <Plug>(columnskip:first-nonblank:prev)
+nmap s] <Plug>(columnskip:first-nonblank:next)
+omap s] <Plug>(columnskip:first-nonblank:next)
+xmap s] <Plug>(columnskip:first-nonblank:next)
+nmap s[ <Plug>(columnskip:first-nonblank:prev)
+omap s[ <Plug>(columnskip:first-nonblank:prev)
+xmap s[ <Plug>(columnskip:first-nonblank:prev)
 ```
