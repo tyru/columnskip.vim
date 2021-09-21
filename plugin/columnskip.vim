@@ -1,11 +1,11 @@
 scriptencoding utf-8
 
-nnoremap <expr><silent> <Plug>(columnskip:nonblank:next) columnskip#nonblank('j')
-onoremap <expr><silent> <Plug>(columnskip:nonblank:next) columnskip#nonblank('j')
-xnoremap <expr><silent> <Plug>(columnskip:nonblank:next) columnskip#nonblank('j')
-nnoremap <expr><silent> <Plug>(columnskip:nonblank:prev) columnskip#nonblank('k')
-onoremap <expr><silent> <Plug>(columnskip:nonblank:prev) columnskip#nonblank('k')
-xnoremap <expr><silent> <Plug>(columnskip:nonblank:prev) columnskip#nonblank('k')
+nnoremap <silent> <Plug>(columnskip:nonblank:next) <cmd>call columnskip#nonblank('j')<cr>
+onoremap <silent> <Plug>(columnskip:nonblank:next) <cmd>call columnskip#nonblank('j')<cr>
+xnoremap <silent> <Plug>(columnskip:nonblank:next) <cmd>call columnskip#nonblank('j')<cr>
+nnoremap <silent> <Plug>(columnskip:nonblank:prev) <cmd>call columnskip#nonblank('k')<cr>
+onoremap <silent> <Plug>(columnskip:nonblank:prev) <cmd>call columnskip#nonblank('k')<cr>
+xnoremap <silent> <Plug>(columnskip:nonblank:prev) <cmd>call columnskip#nonblank('k')<cr>
 
 " for compatibility
 nmap <Plug>(columnskip-j) <Plug>(columnskip:nonblank:next)
